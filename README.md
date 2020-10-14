@@ -1,6 +1,8 @@
 #include<iostream>
 #include<iomanip>
 using namespace std;
+void calprice(float price[5][3]);
+void display(string name[5],float price[5][3]);
 int main(void)
 {	float price[5][3];
 	string name[5];
@@ -10,6 +12,8 @@ int main(void)
 		cout << "Price : ";
 		cin >> price[i][0];
 		}
+		calprice(price);
+		display(name,price);
 	
 	return 0;
 }
@@ -30,7 +34,7 @@ void display(string name[5],float price[5][3])
 	  for ( int i = 0; i < 5; ++i) {
 		  cout << fixed;
 		  cout << setprecision(2);
-		  cout<< i+1 <<"."<<"\t" << name[i]<<"\t"<<price[i][0]<<"\t"<<price[i][1]<<"\t"<<price[i][2]<<endl;
+		  cout<< i+1 <<"."<<"\t" << name[i] <<"\t"<< price[i][0]<<"\t" << price[i][1] << "\t"<<price[i][2]<<endl;
 	  }
 	  cout<<setw(30)<<setfill('-')<<" "<<endl;
 	  cout<<endl;
